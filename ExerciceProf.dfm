@@ -1,9 +1,10 @@
 object Form1: TForm1
   Left = 0
   Top = 0
+  Anchors = [akTop]
   Caption = 'Form1'
-  ClientHeight = 393
-  ClientWidth = 684
+  ClientHeight = 351
+  ClientWidth = 648
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,13 +16,12 @@ object Form1: TForm1
   PixelsPerInch = 96
   TextHeight = 13
   object fenetre_liste: TListView
-    Left = 16
-    Top = 50
-    Width = 202
-    Height = 130
+    Left = 32
+    Top = 88
+    Width = 314
+    Height = 209
     Columns = <
       item
-        Alignment = taCenter
         AutoSize = True
         Caption = 'nom'
       end
@@ -35,40 +35,40 @@ object Form1: TForm1
     OnClick = SelectionChange
   end
   object edit_prenom: TEdit
-    Left = 237
-    Top = 50
+    Left = 365
+    Top = 88
     Width = 121
     Height = 21
     Alignment = taCenter
     TabOrder = 1
   end
   object edit_nom: TEdit
-    Left = 237
-    Top = 85
+    Left = 365
+    Top = 123
     Width = 121
     Height = 21
     Alignment = taCenter
     TabOrder = 2
   end
   object edit_moyenne: TEdit
-    Left = 237
-    Top = 120
+    Left = 365
+    Top = 158
     Width = 121
     Height = 21
     Alignment = taCenter
     TabOrder = 3
   end
   object edit_telephone: TEdit
-    Left = 237
-    Top = 155
+    Left = 365
+    Top = 193
     Width = 121
     Height = 21
     Alignment = taCenter
     TabOrder = 4
   end
   object btn_ajout: TButton
-    Left = 378
-    Top = 50
+    Left = 506
+    Top = 88
     Width = 49
     Height = 25
     Caption = '+'
@@ -76,8 +76,8 @@ object Form1: TForm1
     OnClick = btn_ajoutClick
   end
   object btn_retrait: TButton
-    Left = 378
-    Top = 85
+    Left = 506
+    Top = 123
     Width = 49
     Height = 25
     Caption = '-'
@@ -85,8 +85,8 @@ object Form1: TForm1
     OnClick = btn_retraitClick
   end
   object btn_sauvegarde: TButton
-    Left = 378
-    Top = 155
+    Left = 506
+    Top = 193
     Width = 49
     Height = 25
     Caption = 'save'
@@ -94,8 +94,8 @@ object Form1: TForm1
     OnClick = btn_sauvegardeClick
   end
   object btn_edit: TButton
-    Left = 378
-    Top = 120
+    Left = 506
+    Top = 158
     Width = 49
     Height = 25
     Caption = 'edit'

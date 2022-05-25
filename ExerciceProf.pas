@@ -132,20 +132,36 @@ begin
   ShowMessage('Choississez l eleve a editer');
 end;
 
-procedure TForm1.btn_sauvegardeClick(Sender: TObject);
-begin
-  ShowMessage('Test FileStream');
-{
+procedure WriteStringFile(fs : TFileStream; contenu : string);
 var
-  _filestream : TFileStream;
-  _integer: Integer;
+  _tailleChaine : Integer;
+  _machaine : string;
 begin
-  _filestream := TFileStream.Create('c:\test.txt', fmCreate);
-  _integer := 5;
-  _fileStream.Write(_integer, sizeof(integer));
+  _tailleChaine := Length(contenu);
+  fs.Write(_tailleChaine, SizeOf(Integer));
 
+  _machaine := contenu;
+  fs.Write(_machaine[1], _machaine.Length * SizeOf(char));
+end;
+
+procedure TForm1.btn_sauvegardeClick(Sender: TObject);
+var
+  _fileStream : TFileStream;
+  _tailleChaine : Integer;
+  _machaine : string;
+  i : integer;
+begin
+  _fileStream := TFileStream.Create('C:\Users\Clement\Documents\Privé'
+    +'\Apprendre\as_informatique\programmation_windows\Embarcadero'
+    +'\Studio\Projets\ProjetProf\test.txt', fmCreate);
+  for i := 0 to Form1.Feleves.Count - 1 do
+  begin
+    WriteStringFile(_fileStream, Form1.Feleves[i].Fnom);
+    WriteStringFile(_fileStream, Form1.Feleves[i].Fprenom);
+    WriteStringFile(_fileStream, Form1.Feleves[i].Fmoyenne);
+    WriteStringFile(_fileStream, Form1.Feleves[i].Ftelephone);
+  end;
   _fileStream.Free;
-}
 end;
 
 end.
